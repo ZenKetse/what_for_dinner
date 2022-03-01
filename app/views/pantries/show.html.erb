@@ -1,5 +1,14 @@
-<h1>Pantries#show</h1>
-<p>Find me in app/views/pantries/show.html.erb</p>
-<% @pantry_ingredients.each do |pantry_ingredient| %>
-  <%= pantry_ingredient.ingredient.name %> - <%= pantry_ingredient.in_stock %> - <%= pantry_ingredient.default %>
-<% end %>
+<div class="container">
+  <h1>Your Pantry</h1>
+  <div class="row">
+    <% @pantry_ingredients.each do |pantry_ingredient| %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= pantry_ingredient.ingredient.name %></h2>
+          <p>Default: <%= pantry_ingredient.default %> <strong>In Stock: <%= pantry_ingredient.in_stock %></strong></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
