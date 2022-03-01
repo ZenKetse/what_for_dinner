@@ -1,0 +1,5 @@
+<h1>Pantries#show</h1>
+<p>Find me in app/views/pantries/show.html.erb</p>
+<% @pantry_ingredients.each do |pantry_ingredient| %>
+  <%= pantry_ingredient.ingredient.name %> - <%= pantry_ingredient.in_stock %> - <%= pantry_ingredient.default %>
+<% end %>
