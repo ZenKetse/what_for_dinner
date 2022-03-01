@@ -35,6 +35,7 @@ Category.all.each do |category|
     html_file = URI.open(url).read
     html_doc = Nokogiri::HTML(html_file)
     array = html_doc.search(".vdo_lst h3").map{|node| node.text}
+
     array.each do |ingredient|
       Ingredient.create!(name: ingredient, category_id: category.id)
     end
@@ -43,3 +44,8 @@ Category.all.each do |category|
 end
 
 puts "Created #{Ingredient.count} ingredients!"
+
+puts "Creating recipes ..."
+
+
+puts "Created #{Recipe.count} recipes"
