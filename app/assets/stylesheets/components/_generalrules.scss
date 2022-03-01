@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-$white: #FFFFFF;
-$darkyellow: #F5AF00;
-$yellow: #FFC533;
-$lightyellow: #FFD770;
-$lighteryellow: #FFEEC2;
-$lightgrey:#F3F3F3;
-$grey: #AFAFAF;
-$dark: #383043;
+$my-white: #FFFFFF;
+$my-darkyellow: #F5AF00;
+$my-yellow: #FFC533;
+$my-lightyellow: #FFD770;
+$my-lighteryellow: #FFEEC2;
+$my-lightgrey:#F3F3F3;
+$my-grey: #AFAFAF;
+$my-dark: #383043;
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: $dark;
+  color: $my-dark;
 }
 
 h1 {
@@ -21,7 +21,7 @@ h1 {
 
 h2 {
   font-size: 24px;
-  color: $grey;
+  color: $my-grey;
 }
 
 h3 {
@@ -31,18 +31,18 @@ h3 {
 
 h4 {
   font-size: 14px;
-  color: $grey;
+  color: $my-grey;
 }
 
 h4:active {
   font-size: 14px;
-  color: $yellow;
+  color: $my-yellow;
   font-weight: bold;
 }
 
 h5 {
   font-family: 12px;
-  color: $grey;
+  color: $my-grey;
 }
 
 p {
