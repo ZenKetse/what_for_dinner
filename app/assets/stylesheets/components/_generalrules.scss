@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+$my-white: #FFFFFF;
+$my-darkyellow: #F5AF00;
+$my-yellow: #FFC533;
+$my-lightyellow: #FFD770;
+$my-lighteryellow: #FFEEC2;
+$my-lightgrey:#F3F3F3;
+$my-grey: #AFAFAF;
+$my-dark: #383043;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: $my-dark;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bolder;
+}
+
+h2 {
+  font-size: 24px;
+  color: $my-grey;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+h4 {
+  font-size: 14px;
+  color: $my-grey;
+}
+
+h4:active {
+  font-size: 14px;
+  color: $my-yellow;
+  font-weight: bold;
+}
+
+h5 {
+  font-family: 12px;
+  color: $my-grey;
+}
+
+p {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bolder;
+}
