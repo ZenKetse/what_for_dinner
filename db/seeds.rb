@@ -22,7 +22,7 @@ content['recipes'].each do |recipe|
       unless category.save
         category = Category.find_by(name: ingredient['aisle'])
       end
-    desired_ingredient = Ingredient.new(name: ingredient['name'], category: category)
+    desired_ingredient = Ingredient.new(name: ingredient['name'], category: category, image: "https://spoonacular.com/cdn/ingredients_100x100/#{ingredient['image']}")
       unless desired_ingredient.save
         desired_ingredient = Ingredient.find_by(name: ingredient['name'])
       end
