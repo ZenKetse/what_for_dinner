@@ -11,7 +11,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
 request = Net::HTTP::Get.new(url)
 request["x-rapidapi-host"] = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-request["x-rapidapi-key"] = 'a2c54b7b22msh5bd24efb466aac6p196798jsn7b4acca12d8c'
+request["x-rapidapi-key"] = ENV["X_RAPIDAPI_KEY"]
 
 response = http.request(request)
 content = JSON.parse(response.body)
