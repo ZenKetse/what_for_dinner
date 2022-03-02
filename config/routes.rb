@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'pantries/show'
   devise_for :users
   root to: 'pages#home'
-  resource :pantry, only: :show
+  resource :pantry, only: :show do
+    resources :ingredients, only: :index
+  end
 end
