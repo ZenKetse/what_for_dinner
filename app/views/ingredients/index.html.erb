@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Ingredients Index</h1>
+  <div class="row">
+    <%  @ingredients.each do |ingredient| %>
+      <div class="card-product">
+        <img src="<%= ingredient.image %>" />
+        <div class="card-product-infos">
+          <h2><%= ingredient.category.name %></h2>
+          <p><%= ingredient.name %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
