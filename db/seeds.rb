@@ -1,51 +1,40 @@
-require "open-uri"
-require "nokogiri"
-require "byebug"
+require 'uri'
+require 'net/http'
+require 'openssl'
+require 'json'
 
-puts "Creating Categories..."
+url = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=10")
 
-Category.create!(name: 'Vegetables')
-Category.create!(name: 'Spices and Herbs')
-Category.create!(name: 'Cereals and Pulses')
-Category.create!(name: 'Meat')
-Category.create!(name: 'Dairy Products')
-Category.create!(name: 'Fruits')
-Category.create!(name: 'Seafood')
-Category.create!(name: 'Sugar and Sugar Products')
-Category.create!(name: 'Nuts and Oilseeds')
-Category.create!(name: 'Other Ingredients')
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-puts "Created #{Category.count} categories (must be 10)!"
+request = Net::HTTP::Get.new(url)
+request["x-rapidapi-host"] = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+request["x-rapidapi-key"] = 'a2c54b7b22msh5bd24efb466aac6p196798jsn7b4acca12d8c'
 
-puts "Creating ingredients..."
+response = http.request(request)
+content = JSON.parse(response.body)
 
-Category.all.each do |category|
-  i = 1
-  name = category.name.gsub(" ", "-")
-  url = "https://food.ndtv.com/ingredient/#{name}/page-1"
-
-  html_file = URI.open(url).read
-  html_doc = Nokogiri::HTML(html_file)
-  pages = html_doc.search("#pagination").children.children.children.text.split("")
-  pages.pop(6)
-
-  if pages.pop.to_i >= i
-    url = "https://food.ndtv.com/ingredient/#{name}/page-#{i}"
-
-    html_file = URI.open(url).read
-    html_doc = Nokogiri::HTML(html_file)
-    array = html_doc.search(".vdo_lst h3").map{|node| node.text}
-
-    array.each do |ingredient|
-      Ingredient.create!(name: ingredient, category_id: category.id)
-    end
+content['recipes'].each do |recipe|
+  recipe['extendedIngredients'].each do |ingredient|
+    category = Category.new(name: ingredient['aisle'])
+      unless category.save
+        category = Category.find_by(name: ingredient['aisle'])
+      end
+    desired_ingredient = Ingredient.new(name: ingredient['name'], category: category)
+      unless desired_ingredient.save
+        desired_ingredient = Ingredient.find_by(name: ingredient['name'])
+      end
+    desired_recipe = Recipe.new(name: recipe['title'], dish_types: recipe['dishTypes'], instructions: recipe['instructions'])
+      unless desired_recipe.save
+        desired_recipe = Recipe.find_by(name: recipe['title'])
+      end
+    recipe_ingredient = RecipeIngredient.new(recipe: desired_recipe, ingredient: desired_ingredient, amount: ingredient['amount'])
+      unless recipe_ingredient.save
+        RecipeIngredient.find_by(recipe: recipe)
+      end
   end
-  i += 1
 end
 
-puts "Created #{Ingredient.count} ingredients!"
-
-puts "Creating recipes ..."
-
-
-puts "Created #{Recipe.count} recipes"
+puts "Created #{Recipe.count} recipes, #{Ingredient.count} ingredients, #{Category.count} categories"
