@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resource :pantry, only: :show do
     resources :ingredients, only: :index
     resources :pantry_ingredients, only: %i[update create]
+    get '/your-recipes', to: 'recipes#your_index'
   end
 end

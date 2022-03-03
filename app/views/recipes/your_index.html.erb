@@ -1,0 +1,12 @@
+<h1>All the recipes you can cook</h1>
+<div class="row">
+  <% @user_recipes.each do |user_recipe| %>
+    <div class="card-product">
+      <img src="<%= user_recipe.image %>" />
+      <div class="card-product-infos">
+        <h2><%= user_recipe.name %></h2>
+        <p>Default: <%= user_recipe.dish_types %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -26,7 +26,7 @@ content['recipes'].each do |recipe|
       unless desired_ingredient.save
         desired_ingredient = Ingredient.find_by(name: ingredient['name'])
       end
-    desired_recipe = Recipe.new(name: recipe['title'], dish_types: recipe['dishTypes'], instructions: recipe['instructions'])
+    desired_recipe = Recipe.new(name: recipe['title'], dish_types: recipe['dishTypes'], instructions: recipe['instructions'], image: recipe['image'])
       unless desired_recipe.save
         desired_recipe = Recipe.find_by(name: recipe['title'])
       end
