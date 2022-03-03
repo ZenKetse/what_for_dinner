@@ -1,12 +1,15 @@
-<h1>This is your pantry 👌</h1>
-<div class="row">
-  <% @pantry_ingredients.each do |pantry_ingredient| %>
-    <div class="card-product">
-      <img src="<%= pantry_ingredient.ingredient.image %>" />
-      <div class="card-product-infos">
-        <h2><%= pantry_ingredient.ingredient.name %></h2>
-        <p>Default: <%= pantry_ingredient.default %> <strong>In Stock: <%= pantry_ingredient.in_stock %></strong></p>
+<div class="container-show-pantry">
+  <h1>This is your pantry 👌</h1>
+  <div class="row">
+    <% @pantry_ingredients.each do |pantry_ingredient| %>
+      <div class="card-product">
+        <img src="<%= pantry_ingredient.ingredient.image %>" />
+        <div class="card-product-infos">
+          <h2><%= pantry_ingredient.ingredient.name %></h2>
+          <p>Default: <%= pantry_ingredient.default %> <strong>In Stock: <%= pantry_ingredient.in_stock %></strong></p>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+  <a class="primary-dark-btn-wfd" href="#">Do you want to add ingredients?</a>
 </div>
