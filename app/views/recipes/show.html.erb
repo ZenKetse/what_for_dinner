@@ -1,8 +1,27 @@
-<img src="<%= @recipe.image %>" alt="<%= @recipe.name %> image">
-<h1><%= @recipe.name %></h1>
-<h3>Recipe Ingredients</h3>
-<% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
-  <p><%= recipe_ingredient.amount %> <%= recipe_ingredient.unit %> - <%= recipe_ingredient.ingredient.name %></p>
-<% end %>
-<h3>Recipe Instructions</h3>
-<p><%= @recipe.instructions.html_safe %></p>
+<div class="topbar show-nav-bar">
+  <%= link_to :back do %>
+    <i class="fa-solid fa-arrow-left dark-topbar-icon"></i>
+  <% end %>
+  <div class="user-icon">
+    <%= link_to(edit_user_registration_path) do %>
+      <i class="fa-solid fa-user grey-topbar-icon"></i>
+    <% end %>
+  </div>
+</div>
+<div class="align-items-center no-padding show-page">
+  <img class="show-recipe-image" src="<%= @recipe.image %>" alt="<%= @recipe.name %> image">
+  <div class=" container recipe-description">
+    <h2 class="show-page-h2"><%= @recipe.name %></h1>
+    <h3>Recipe Ingredients</h3>
+    <div class="show-page-content">
+      <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
+        <p class="show-page-p"><%= recipe_ingredient.amount %> <%= recipe_ingredient.unit %>   <%= recipe_ingredient.ingredient.name %></p>
+      <% end %>
+    </div>
+      <h3>Recipe Instructions</h3>
+      <p class="show-page-p mb-1"><%= @recipe.instructions.html_safe %></p>
+  </div>
+  <br>
+  <br>
+  <br>
+</div>
