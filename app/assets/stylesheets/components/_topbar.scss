@@ -1,0 +1,28 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  height: 90px;
+  width: 100vw;
+  background: white;
+  padding: 0 24px;
+}
+
+.user-icon {
+  height: 32px;
+  width: 32px;
+  background-color: $my-lightgrey;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grey-topbar-icon {
+  color: $my-grey;
+}
+
+.dark-topbar-icon {
+  color: $my-dark;
+}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 $my-white: #FFFFFF;
 $my-darkyellow: #F5AF00;
@@ -9,14 +9,9 @@ $my-lightgrey:#F3F3F3;
 $my-grey: #AFAFAF;
 $my-dark: #383043;
 
-body {
-  font-family: 'Poppins', sans-serif;
-  color: $my-dark;
-}
-
 h1 {
   font-size: 28px;
-  font-weight: bolder;
+  font-weight: 600;
 }
 
 h2 {
@@ -26,7 +21,7 @@ h2 {
 
 h3 {
   font-size: 16px;
-  font-weight: bolder;
+  font-weight: 600;
 }
 
 h4 {
