@@ -1,7 +1,7 @@
 <div class="card-product" data-controller="pantry-ingredients" data-pantry-ingredients-id-value=<%= pantry_ingredient.id %> data-action="click->pantry-ingredients#remove_ingredient" data-pantry-ingredients-target="ingredientCard">
   <img src="<%= pantry_ingredient.ingredient.image %>" />
   <div class="card-product-infos">
-    <h2><%= pantry_ingredient.ingredient.name %></h2>
+    <h3><%= pantry_ingredient.ingredient.name %></h3>
     <p>Default: <%= pantry_ingredient.default %> <strong>In Stock: <%= pantry_ingredient.in_stock %></strong></p>
   </div>
 </div>
