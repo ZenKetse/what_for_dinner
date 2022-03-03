@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_one :shopping_list
   has_many :pantry_ingredients, through: :pantry
   has_many :shopping_list_ingredients, through: :shopping_list
+  validates :email, uniqueness: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

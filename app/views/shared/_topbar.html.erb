@@ -1,6 +1,22 @@
+<%# <div class="navbar navbar-expand-sm navbar-light navbar-lewagon topbar">
+  <a class="navbar-brand" href="#"><i class="fa-solid fa-arrow-left dark-topbar-icon"></i></a>
+  <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <i class="fa-solid fa-user grey-topbar-icon dropdown-toggle navbar-collapse" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+        </div>
+      </li>
+  </ul>
+</div> %>
 <div class="topbar">
-  <a href="#"><i class="fa-solid fa-arrow-left dark-topbar-icon"></i></a>
+  <%= link_to :back do %>
+    <i class="fa-solid fa-arrow-left dark-topbar-icon"></i>
+  <% end %>
   <div class="user-icon">
-    <a href="#"><i class="fa-solid fa-user grey-topbar-icon"></i></a>
+    <%= link_to(edit_user_registration_path) do %>
+      <i class="fa-solid fa-user grey-topbar-icon"></i>
+    <% end %>
   </div>
 </div>
