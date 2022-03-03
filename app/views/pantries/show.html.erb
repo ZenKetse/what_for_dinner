@@ -2,7 +2,7 @@
 <div class="row">
   <% @pantry_ingredients.each do |pantry_ingredient| %>
     <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <img src="<%= pantry_ingredient.ingredient.image %>" />
       <div class="card-product-infos">
         <h2><%= pantry_ingredient.ingredient.name %></h2>
         <p>Default: <%= pantry_ingredient.default %> <strong>In Stock: <%= pantry_ingredient.in_stock %></strong></p>
