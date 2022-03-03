@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_02_151329) do
+ActiveRecord::Schema.define(version: 2022_03_03_123854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,7 +53,8 @@ ActiveRecord::Schema.define(version: 2022_03_02_151329) do
     t.bigint "ingredient_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "amount"
+    t.float "amount"
+    t.string "unit"
     t.index ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id"
     t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
   end
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 2022_03_02_151329) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "dish_types"
     t.text "instructions"
+    t.string "image"
   end
 
   create_table "shopping_list_ingredients", force: :cascade do |t|

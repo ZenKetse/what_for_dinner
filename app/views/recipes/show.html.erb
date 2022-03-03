@@ -1,0 +1,8 @@
+<img src="<%= @recipe.image %>" alt="<%= @recipe.name %> image">
+<h1><%= @recipe.name %></h1>
+<h3>Recipe Ingredients</h3>
+<% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
+  <p><%= recipe_ingredient.amount %> <%= recipe_ingredient.unit %> - <%= recipe_ingredient.ingredient.name %></p>
+<% end %>
+<h3>Recipe Instructions</h3>
+<p><%= @recipe.instructions.html_safe %></p>
