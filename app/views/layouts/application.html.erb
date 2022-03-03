@@ -13,11 +13,15 @@
   </head>
 
   <body>
-    <%= render 'shared/topbar' %>
+    <%= render 'shared/topbar' unless @hide_topnav%>
     <%= render 'shared/flashes' %>
-    <div class="body-grid">
-      <%= yield %>
-    </div>
-    <%= render 'shared/navbar' %>
+    <% if !(action_name == "home") %>
+      <div class="body-grid">
+       <%= yield %>
+      </div>
+      <% else %>
+       <%= yield %>
+    <% end %>
+    <%= render 'shared/navbar' unless @hide_bottomnav%>
   </body>
 </html>
