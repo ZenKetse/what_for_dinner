@@ -2,13 +2,7 @@
   <h1>This is your pantry 👌</h1>
   <div class="row">
     <% @pantry_ingredients.each do |pantry_ingredient| %>
-      <div class="card-product">
-        <img src="<%= pantry_ingredient.ingredient.image %>" />
-        <div class="card-product-infos">
-          <h2><%= pantry_ingredient.ingredient.name %></h2>
-          <p>Default: <%= pantry_ingredient.default %> <strong>In Stock: <%= pantry_ingredient.in_stock %></strong></p>
-        </div>
-      </div>
+      <%= render "show_ingredient_card", pantry_ingredient: pantry_ingredient %>
     <% end %>
   </div>
   <%= link_to "Do you want to add ingredients?", pantry_ingredients_path, class: "primary-dark-btn-wfd" %>
