@@ -13,9 +13,9 @@
   </head>
 
   <body>
-    <%= render 'shared/topbar' unless @hide_topnav%>
     <%= render 'shared/flashes' %>
-    <% if !(action_name == "home") %>
+    <% if  !(action_name == 'show' && controller_name == 'recipes') && !(action_name == "home") %>
+    <%= render 'shared/topbar' unless @hide_topnav%>
       <div class="body-grid">
        <%= yield %>
       </div>
