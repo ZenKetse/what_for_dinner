@@ -12,6 +12,7 @@ $my-dark: #383043;
 h1 {
   font-size: 28px;
   font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
@@ -48,4 +49,10 @@ a {
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
+}
+
+.detail {
+  color: $my-grey;
+  font-size: 12px;
+  line-height: 18px;
 }

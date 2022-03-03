@@ -1,10 +1,6 @@
-<div class="container">
-  <h1>Ingredients Index</h1>
-  <div class="row">
-    <%  @not_have_ingredients.each do |ingredient| %>
-      <div class="card-product" data-controller="ingredients-index" data-ingredients-index-id-value=<%= ingredient.id %> data-action="click->ingredients-index#select_ingredient" data-ingredients-index-target="ingredientCard">
-        <%= render "ingredient_card", ingredient: ingredient %>
-      </div>
-    <% end %>
+<h1>Ingredients Index</h1>
+<%  @not_have_ingredients.each do |ingredient| %>
+  <div class="card-product" data-controller="ingredients-index" data-ingredients-index-id-value=<%= ingredient.id %> data-action="click->ingredients-index#select_ingredient" data-ingredients-index-target="ingredientCard">
+    <%= render "ingredient_card", ingredient: ingredient %>
   </div>
-</div>
+<% end %>
