@@ -1,6 +1,6 @@
 <div class="container-show-pantry">
   <h1>This is your pantry 👌</h1>
-  <div class="row">
+  <div>
     <% @pantry_ingredients.each do |pantry_ingredient| %>
       <%= render "show_ingredient_card", pantry_ingredient: pantry_ingredient %>
     <% end %>
