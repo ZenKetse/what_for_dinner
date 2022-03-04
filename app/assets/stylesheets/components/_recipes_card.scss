@@ -1,4 +1,4 @@
-.card-ingredient {
+.card-recipes {
   overflow: hidden;
   height: 7rem;
   background: $my-lightgrey;
@@ -8,7 +8,7 @@
   border-radius: 10px;
 }
 
-.card-ingredient img {
+.card-recipes img {
   height: 100%;
   width: 120px;
   object-fit: fill;
@@ -16,8 +16,6 @@
   border: 1px solid $my-lightgrey;
 }
 
-.card-ingredient .card-ingredient-infos {
-  padding: 16px 30px 16px 16px;
+.card-recipes .card-recipes-infos {
+  padding: 16px 20px 16px 16px;
 }
-
-
