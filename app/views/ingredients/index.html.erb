@@ -1,6 +1,13 @@
 <h1>What ingredients do <br> you want to add?</h1>
-<%  @not_have_ingredients.each do |ingredient| %>
-  <div class="card-ingredient" data-controller="ingredients-index" data-ingredients-index-id-value=<%= ingredient.id %> data-action="click->ingredients-index#select_ingredient" data-ingredients-index-target="ingredientCard">
-    <%= render "ingredient_card", ingredient: ingredient %>
-  </div>
+<%= form_with url: pantry_ingredients_path, method: :get, class: "mb-3" do |form| %>
+  <%= form.text_field :query,
+                      class: "form-control",
+                      placeholder: 'Search ingredient' %>
 <% end %>
+<div data-search-ingredients-target="list">
+  <%  @not_have_ingredients.each do |ingredient| %>
+    <div class="card-ingredient" data-controller="ingredients-index" data-ingredients-index-id-value=<%= ingredient.id %> data-action="click->ingredients-index#select_ingredient" data-ingredients-index-target="ingredientCard">
+      <%= render "ingredient_card", ingredient: ingredient %>
+    </div>
+  <% end %>
+</div>
