@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
   static targets = [ "ingredientCard" ]
-  static values = { id: Number }
+  static values = { id: Number, url: String }
 
   connect() {
 
@@ -10,7 +10,7 @@ export default class extends Controller {
 
   select_ingredient() {
     console.log(this);
-    const url = "http://localhost:3000/pantry/pantry_ingredients"
+    const url = this.urlValue
     fetch(url, {
       method: "POST",
       headers: { "Accept": "text/plain", 'Content-Type': 'application/json' },

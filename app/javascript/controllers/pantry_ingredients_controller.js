@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
   static targets = [ "ingredientCard" ]
-  static values = { id: Number }
+  static values = { id: Number, url: String }
 
   connect() {
 
@@ -10,7 +10,7 @@ export default class extends Controller {
 
   remove_ingredient() {
     console.log(this);
-    const url = "http://localhost:3000/pantry"
+    const url = this.urlValue
     fetch(url, {
       method: "DELETE",
       headers: { "Accept": "text/plain", 'Content-Type': 'application/json' },

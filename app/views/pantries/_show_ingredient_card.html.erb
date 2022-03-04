@@ -1,4 +1,4 @@
-<div class="card-ingredient" data-controller="pantry-ingredients" data-pantry-ingredients-id-value=<%= pantry_ingredient.id %> data-action="click->pantry-ingredients#remove_ingredient" data-pantry-ingredients-target="ingredientCard">
+<div class="card-ingredient" data-controller="pantry-ingredients" data-pantry-ingredients-url-value="<%= pantry_url %>" data-pantry-ingredients-id-value=<%= pantry_ingredient.id %> data-action="click->pantry-ingredients#remove_ingredient" data-pantry-ingredients-target="ingredientCard">
   <img src="<%= pantry_ingredient.ingredient.image %>" />
   <div class="card-ingredient-infos">
     <h3><%= pantry_ingredient.ingredient.name.titleize %></h3>
