@@ -1,4 +1,3 @@
-require "byebug"
 class IngredientsController < ApplicationController
   def index
     if params[:query].present?
