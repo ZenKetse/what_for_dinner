@@ -1,12 +1,12 @@
 <h1>All the recipes you can cook</h1>
-<div class="row">
+<div>
   <% @user_recipes.each do |user_recipe| %>
     <%= link_to(pantry_recipe_path(user_recipe)) do %>
-    <div class="card-product">
+    <div class="card-recipes">
       <img src="<%= user_recipe.image %>" />
-      <div class="card-product-infos">
-        <h2><%= user_recipe.name %></h2>
-        <p>Default: <%= user_recipe.dish_types %></p>
+      <div class="card-recipes-infos">
+        <h3><%= user_recipe.name %></h3>
+        <p class="detail"><%= user_recipe.dish_types %></p>
       </div>
     </div>
     <% end %>
