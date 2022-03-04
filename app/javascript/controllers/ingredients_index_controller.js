@@ -10,7 +10,7 @@ export default class extends Controller {
 
   select_ingredient() {
     console.log(this);
-    const url = "http://localhost:3000//pantry/pantry_ingredients"
+    const url = "http://localhost:3000/pantry/pantry_ingredients"
     fetch(url, {
       method: "POST",
       headers: { "Accept": "text/plain", 'Content-Type': 'application/json' },
