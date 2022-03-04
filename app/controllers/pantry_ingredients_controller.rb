@@ -15,4 +15,8 @@ class PantryIngredientsController < ApplicationController
   def update
     @pantry = current_user.pantry
   end
+
+  def destroy
+    @pantry_ingredient = PantryIngredient.find(params[:id]).destroy
+  end
 end
