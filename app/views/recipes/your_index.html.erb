@@ -6,7 +6,11 @@
       <img src="<%= user_recipe.image %>" />
       <div class="card-recipes-infos">
         <h3><%= user_recipe.name %></h3>
-        <p class="detail"><%= user_recipe.dish_types %></p>
+        <% if !(user_recipe.dish_types == "[]") %>
+          <p class="detail"><% user_recipe.dish_types.split(',').each do |dish_type| %>
+          <%= dish_type.titleize.gsub(/\[|\]|"/, '') %>;
+          <% end %></p>
+        <% end %>
       </div>
     </div>
     <% end %>
