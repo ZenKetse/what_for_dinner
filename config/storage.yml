@@ -7,7 +7,7 @@ local:
   root: <%= Rails.root.join("storage") %>
 
 RapidApi:
-  service: RapidApi
+  service: X_RAPIDAPI_KEY
   folder: <%= Rails.env %>
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
