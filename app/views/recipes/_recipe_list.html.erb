@@ -1,0 +1,17 @@
+<div>
+  <% recipes.each do |recipe| %>
+    <%= link_to(pantry_recipe_path(recipe)) do %>
+    <div class="card-recipes">
+      <img src="<%= recipe.image %>" />
+      <div class="card-recipes-infos">
+        <h3><%= recipe.name %></h3>
+        <% if !(recipe.dish_types == "[]") %>
+          <p class="detail"><% recipe.dish_types.split(',').each do |dish_type| %>
+          <%= dish_type.titleize.gsub(/\[|\]|"/, '') %>;
+          <% end %></p>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>

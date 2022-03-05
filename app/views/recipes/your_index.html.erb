@@ -1,18 +1,2 @@
 <h1>All the recipes you can cook</h1>
-<div>
-  <% @user_recipes.each do |user_recipe| %>
-    <%= link_to(pantry_recipe_path(user_recipe)) do %>
-    <div class="card-recipes">
-      <img src="<%= user_recipe.image %>" />
-      <div class="card-recipes-infos">
-        <h3><%= user_recipe.name %></h3>
-        <% if !(user_recipe.dish_types == "[]") %>
-          <p class="detail"><% user_recipe.dish_types.split(',').each do |dish_type| %>
-          <%= dish_type.titleize.gsub(/\[|\]|"/, '') %>;
-          <% end %></p>
-        <% end %>
-      </div>
-    </div>
-    <% end %>
-  <% end %>
-</div>
+<%= render "recipe_list", recipes: @user_recipes %>
