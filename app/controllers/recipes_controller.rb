@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
     @user_ingredients = []
     current_user.pantry_ingredients.each do |pantry_ingredient|
       if pantry_ingredient.in_stock
-        @user_ingredients << pantry_ingredient
+        @user_ingredients << pantry_ingredient.ingredient
       end
     end
     @user_recipes = []
