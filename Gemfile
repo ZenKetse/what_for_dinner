@@ -35,6 +35,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'dotenv-rails'
 gem 'pg_search', '~> 2.3.0'
+gem 'acts_as_favoritor'
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
 
