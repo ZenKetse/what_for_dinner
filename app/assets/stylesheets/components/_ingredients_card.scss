@@ -17,6 +17,30 @@
   object-fit: none;
 }
 
-.card-ingredient .card-ingredient-infos {
-  padding: 16px 30px 16px 16px;
+.card-ingredient-infos {
+  padding: 20px 16px 20px 16px;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  h3 {
+    margin-bottom: 0;
+  }
+}
+
+.card-ingredient-btns {
+  height: 100%;
+  padding: 16px 16px 16px 0;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-ingredient-btn {
+  color: $my-grey;
+  i {
+    padding: 0;
+  }
 }
