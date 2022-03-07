@@ -5,6 +5,7 @@ class PantryIngredientsController < ApplicationController
     @pantry_ingredient = PantryIngredient.new(ingredient: ingredient, in_stock: true, default: true)
     @pantry_ingredient.pantry = current_user.pantry
     @pantry_ingredient.save!
+    flash[:success] = "Igredient added"
 
     respond_to do |format|
       format.html
