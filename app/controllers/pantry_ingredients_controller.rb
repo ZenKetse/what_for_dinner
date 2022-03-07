@@ -16,6 +16,7 @@ class PantryIngredientsController < ApplicationController
 
   def update
     @pantry_ingredient = PantryIngredient.find(params[:id])
+    @pantry_ingredient.default = true
     @pantry_ingredient.update!(in_stock: false)
   end
 
