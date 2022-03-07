@@ -26,7 +26,33 @@
     </div>
       <h3 class="show-page-h3">Recipe Instructions</h3>
       <p class="show-page-p mb-1"><%= @recipe.instructions.html_safe %></p>
-      <%= link_to "Finished cooking", recipe_ingredients_pantry_path(@recipe), class: "primary-dark-btn-wfd" %>
+      <button type="button" class="primary-dark-btn-wfd" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Finished Cooking!
+      </button>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="shop-ingredients">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Mark the ingredients to add to your shopping list</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
+              <% pantry_ingredient = PantryIngredient.find_by(ingredient: recipe_ingredient) %>
+              <div class="form-check form-switch" data-shop-ingredients-target="ingredient" data-shop-ingredients-id-value="<%= pantry_ingredient.id %>">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault"><%= pantry_ingredient.ingredient.name.titleize %></label>
+              </div>
+            <% end %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="secondary-btn-home-wfd" data-action="click->shop-ingredients#update">Save changes</button>
+              <button type="button" class="primary-btn-home-wfd"  style="background-color: white" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
   <br>
   <br>
