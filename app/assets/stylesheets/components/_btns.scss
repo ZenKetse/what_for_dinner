@@ -1,5 +1,5 @@
 .primary-dark-btn-wfd {
-  padding: 14px 24px;
+  padding: 14px 0;
   border-radius: 40px;
   color: $my-yellow;
   background: $my-dark;
@@ -7,6 +7,10 @@
   position: fixed;
   bottom: 6rem;
   text-decoration: none;
+  border-color: $my-dark;
+  width: 88%;
+  justify-content: center;
+  font-weight: 600;
 }
 
 .primary-btn-home-wfd {
@@ -34,4 +38,7 @@
 
 .clicked-background {
   background-color: #F5AF00;
+  h3, p {
+    color: white;
+  }
 }
