@@ -34,6 +34,11 @@ class RecipesController < ApplicationController
     @recipes = favorited_recipes.map { |recipe| Recipe.find(recipe.favoritable_id) }
   end
 
+  def remove_from_favorite
+    @recipe = Recipe.find(params[:recipe_id])
+    current_user.unfavorite(@recipe)
+  end
+
   def add_to_favorite
     @recipe = Recipe.find(params[:recipe_id])
     current_user.favorite(@recipe)
