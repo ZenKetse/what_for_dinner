@@ -31,6 +31,17 @@
   text-align: center;
   text-decoration: none;
 }
+.primary-btn-home-wfd:hover {
+  color: $my-dark;
+}
+
+.primary-dark-btn-wfd:hover {
+  color: $my-yellow;
+}
+
+.secondary-btn-home-wfd:hover {
+  color: $my-yellow;
+}
 
 .clicked-background {
   background-color: #F5AF00;
