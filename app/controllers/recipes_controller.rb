@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
     @user_ingredients = []
     current_user.pantry_ingredients.each do |pantry_ingredient|
       if pantry_ingredient.in_stock
-        @user_ingredients << pantry_ingredient
+        @user_ingredients << pantry_ingredient.ingredient
       end
     end
     @user_recipes = []
@@ -32,6 +32,11 @@ class RecipesController < ApplicationController
   def favorites_index
     favorited_recipes = current_user.all_favorites
     @recipes = favorited_recipes.map { |recipe| Recipe.find(recipe.favoritable_id) }
+  end
+
+  def remove_from_favorite
+    @recipe = Recipe.find(params[:recipe_id])
+    current_user.unfavorite(@recipe)
   end
 
   def add_to_favorite

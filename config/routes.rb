@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get '/recipe-ingredients/:id', to: 'recipes#ingredients', as: 'recipe-ingredients'
     get '/cookbook', to: 'recipes#favorites_index'
     post '/cookbook/favorite/:recipe_id', to: 'recipes#add_to_favorite', as: 'favorite-recipe'
+    post '/cookbook/unfavorite/:recipe_id', to: 'recipes#remove_from_favorite', as: 'unfavorite-recipe'
   end
   resources :pantry_ingredients, only: :destroy
 end
