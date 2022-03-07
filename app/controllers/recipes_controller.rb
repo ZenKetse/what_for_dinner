@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :set_recipe, only: %i[show ingredients]
+
   def your_index
     @recipes = Recipe.all
     @user_ingredients = current_user.pantry.ingredients
@@ -10,7 +12,21 @@ class RecipesController < ApplicationController
     end
   end
 
-  def show
+  def index
+    @recipes = Recipe.all
+  end
+
+  def show; end
+
+  def ingredients
+    @pantry_ingredients = @recipe.recipe_ingredients.map do |recipe_ingredient|
+      PantryIngredient.find_by(ingredient: recipe_ingredient)
+    end
+  end
+
+  private
+
+  def set_recipe
     @recipe = Recipe.find(params[:id])
   end
 end

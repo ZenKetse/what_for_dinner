@@ -17,11 +17,16 @@
     <h3 class="show-page-h3">Recipe Ingredients</h3>
     <div class="show-page-content">
       <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
-        <p class="show-page-p"><%= recipe_ingredient.amount %> <%= recipe_ingredient.unit %>   <%= recipe_ingredient.ingredient.name %></p>
+        <% if current_user.pantry.ingredients.include?(recipe_ingredient.ingredient) %>
+          <p class="show-page-p"><%= recipe_ingredient.amount %> <%= recipe_ingredient.unit %>   <%= recipe_ingredient.ingredient.name %> ✔️</p>
+        <% else %>
+          <p class="show-page-p"><%= recipe_ingredient.amount %> <%= recipe_ingredient.unit %>   <%= recipe_ingredient.ingredient.name %> ❌</p>
+        <% end %>
       <% end %>
     </div>
       <h3 class="show-page-h3">Recipe Instructions</h3>
       <p class="show-page-p mb-1"><%= @recipe.instructions.html_safe %></p>
+      <%= link_to "Finished cooking", recipe_ingredients_pantry_path(@recipe), class: "primary-dark-btn-wfd" %>
   </div>
   <br>
   <br>

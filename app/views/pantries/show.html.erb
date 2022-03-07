@@ -3,6 +3,5 @@
     <% @pantry_ingredients.each do |pantry_ingredient| %>
       <%= render "show_ingredient_card", pantry_ingredient: pantry_ingredient %>
     <% end %>
-  </div>
   <%= link_to "Do you want to add ingredients?", pantry_ingredients_path, class: "primary-dark-btn-wfd" %>
 </div>

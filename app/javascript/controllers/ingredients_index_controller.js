@@ -9,17 +9,14 @@ export default class extends Controller {
   }
 
   select_ingredient() {
-    console.log(this);
     const url = this.urlValue
     fetch(url, {
-      method: "POST",
       headers: { "Accept": "text/plain", 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: this.idValue })
     })
       .then(response => response.text())
       .then((data) => {
-        this.ingredientCardTarget.outterHTML = data
+        console.log(data)
+        this.ingredientCardTarget.classList.toggle("clicked-background")
       })
-      this.ingredientCardTarget.remove();
   }
 }
