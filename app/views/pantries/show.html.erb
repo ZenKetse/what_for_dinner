@@ -1,7 +1,9 @@
 <div class="container-show-pantry">
   <h1>This is your pantry 👌</h1>
     <% @pantry_ingredients.each do |pantry_ingredient| %>
+      <% if pantry_ingredient.in_stock %>
       <%= render "show_ingredient_card", pantry_ingredient: pantry_ingredient %>
+      <% end %>
     <% end %>
   <%= link_to "Do you want to add ingredients?", pantry_ingredients_path, class: "primary-dark-btn-wfd" %>
 </div>
