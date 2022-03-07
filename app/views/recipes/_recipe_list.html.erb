@@ -2,7 +2,9 @@
   <% recipes.each do |recipe| %>
     <%= link_to(pantry_recipe_path(recipe)) do %>
     <div class="card-recipes">
-      <img src="<%= recipe.image %>" />
+      <div style="width: 120px; height: 100%;">
+        <img src="<%= recipe.image %>" />
+      </div>
       <div class="card-recipes-infos">
         <h3><%= recipe.name %></h3>
         <% if !(recipe.dish_types == "[]") %>
