@@ -3,7 +3,12 @@ class RecipesController < ApplicationController
 
   def your_index
     @recipes = Recipe.all
-    @user_ingredients = current_user.pantry.ingredients
+    @user_ingredients = []
+    current_user.pantry_ingredients.each do |pantry_ingredient|
+      if pantry_ingredient.in_stock
+        @user_ingredients << pantry_ingredient
+      end
+    end
     @user_recipes = []
     @recipes.each do |recipe|
       if (recipe.ingredients - @user_ingredients).empty?
