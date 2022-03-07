@@ -1,7 +1,13 @@
 <div class="card-ingredient" data-controller="pantry-ingredients" data-pantry-ingredients-url-value="<%= pantry_ingredient_url(pantry_ingredient) %>" data-pantry-ingredients-id-value=<%= pantry_ingredient.id %> data-action="click->pantry-ingredients#remove_ingredient" data-pantry-ingredients-target="ingredientCard">
-  <img src="<%= pantry_ingredient.ingredient.image %>" />
+  <div style="width: 120px; height: 100%;">
+    <img src="<%= pantry_ingredient.ingredient.image %>" />
+  </div>
   <div class="card-ingredient-infos">
     <h3><%= pantry_ingredient.ingredient.name.titleize %></h3>
     <p class="detail mb-0">In Stock: <%= pantry_ingredient.in_stock %></p>
+  </div>
+  <div class="card-ingredient-btns">
+    <%= link_to "<i class='fa-solid fa-trash-can'></i>".html_safe, root_path, class: "card-ingredient-btn" %>
+    <%= link_to "<i class='fa-solid fa-basket-shopping icon-navbar'></i>".html_safe, root_path, class: "card-ingredient-btn" %>
   </div>
 </div>
