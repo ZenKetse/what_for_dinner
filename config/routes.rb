@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :recipes, only: %i[show index]
     resources :shopping_lists, only: :show
     get '/your-recipes', to: 'recipes#your_index'
+    get '/recipe-ingredients/:id', to: 'recipes#ingredients', as: 'recipe-ingredients'
   end
   resources :pantry_ingredients, only: :destroy
 end

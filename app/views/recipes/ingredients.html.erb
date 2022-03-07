@@ -1,0 +1,5 @@
+<h1>All ingredients you used</h1>
+<p>Update you pantry if you still have the ingredients in stock or not</p>
+<% @pantry_ingredients.each do |pantry_ingredient| %>
+  <p class="show-page-p"><%= pantry_ingredient.ingredient.name %> </p>
+<% end %>
