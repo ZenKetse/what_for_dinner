@@ -1,0 +1,10 @@
+<div class="container-show-pantry">
+  <h1>Your shopping list 🛒</h1>
+  <% if @shopping_list_ingredients.nil? %>
+    <p>You have everything in stock!</p>
+  <% else %>
+    <% @shopping_list_ingredients.each do |shopping_list_ingredient| %>
+      <%= render "/pantries/show_ingredient_card", pantry_ingredient: shopping_list_ingredient %>
+    <% end %>
+  <% end %>
+</div>
