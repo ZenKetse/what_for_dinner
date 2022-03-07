@@ -1,8 +1,8 @@
 <% unless current_user.nil? %>
   <div class="bottom-navbar">
-    <%= link_to "<i class='fa-solid fa-house icon-navbar'></i>".html_safe, your_recipes_pantry_path, class: "#{'active' if params[:controller] == 'recipes'}" %>
+    <%= link_to "<i class='fa-solid fa-house icon-navbar'></i>".html_safe, your_recipes_pantry_path, class: "#{'active' if action_name == 'your_index'}" %>
     <%= link_to "<i class='fas fa-store icon-navbar'></i>".html_safe, pantry_path, class: "#{'active' if params[:controller] == 'pantries'}" %>
-    <%= link_to "<i class='fa-solid fa-book-open icon-navbar'></i>".html_safe, cookbook_pantry_path, class: "#{'active' if params[:controller] == 'recipes'}" %>
+    <%= link_to "<i class='fa-solid fa-book-open icon-navbar'></i>".html_safe, cookbook_pantry_path, class: "#{'active' if action_name == 'favorites_index'}" %>
     <%= link_to "<i class='fa-solid fa-basket-shopping icon-navbar'></i>".html_safe, pantry_shopping_list_path(current_user), class: "#{'active' if params[:controller] == 'shopping_lists'}"  %>
   </div>
 <% end %>
