@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  acts_as_favoritor
   has_one :pantry
   has_one :shopping_list
   has_many :pantry_ingredients, through: :pantry

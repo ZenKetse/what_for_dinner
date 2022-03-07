@@ -29,6 +29,16 @@ class RecipesController < ApplicationController
     end
   end
 
+  def favorites_index
+    favorited_recipes = current_user.all_favorites
+    @recipes = favorited_recipes.map { |recipe| Recipe.find(recipe.favoritable_id) }
+  end
+
+  def add_to_favorite
+    @recipe = Recipe.find(params[:recipe_id])
+    current_user.favorite(@recipe)
+  end
+
   private
 
   def set_recipe

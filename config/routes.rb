@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :shopping_lists, only: :show
     get '/your-recipes', to: 'recipes#your_index'
     get '/recipe-ingredients/:id', to: 'recipes#ingredients', as: 'recipe-ingredients'
+    get '/cookbook', to: 'recipes#favorites_index'
+    post '/cookbook/favorite/:recipe_id', to: 'recipes#add_to_favorite', as: 'favorite-recipe'
   end
   resources :pantry_ingredients, only: :destroy
 end

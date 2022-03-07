@@ -29,6 +29,7 @@
       <button type="button" class="primary-dark-btn-wfd" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Finished Cooking!
       </button>
+      <%= link_to 'Add to Cookbook', favorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd" %>
 
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="shop-ingredients">
         <div class="modal-dialog">
