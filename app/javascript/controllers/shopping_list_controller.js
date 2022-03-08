@@ -17,4 +17,15 @@ export default class extends Controller {
       this.ingredientCardTarget.remove();
   }
 
+  send_to_shopping_list() {
+    let url = this.shoppingValue;
+    console.log(url);
+    fetch(url, {
+      method: "PATCH",
+      headers: {  "Accept": "text/plain", 'Content-Type': 'application/json' } ,
+      body: JSON.stringify({ id: this.idValue })
+    })
+    this.ingredientCardTarget.remove();
+  }
+
 }
