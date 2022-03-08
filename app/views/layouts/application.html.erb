@@ -11,17 +11,18 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
   </head>
 
   <body>
     <%= render 'shared/flashes' %>
-    <% if  !(action_name == 'show' && controller_name == 'recipes') && !(action_name == "home") %>
-    <%= render 'shared/topbar' unless @hide_topnav%>
+    <% if  !(action_name == 'show' && controller_name == 'recipes') && !(action_name == "home") && !(action_name == 'show' && controller_name == 'pantries') %>
+      <%= render 'shared/topbar' unless @hide_topnav%>
       <div class="body-grid">
-       <%= yield %>
+        <%= yield %>
       </div>
-      <% else %>
-       <%= yield %>
+    <% else %>
+      <%= yield %>
     <% end %>
     <%= render 'shared/navbar' unless @hide_bottomnav%>
   </body>

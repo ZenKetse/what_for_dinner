@@ -7,5 +7,4 @@ class PagesController < ApplicationController
     @hide_bottomnav = true
   end
 
-
 end
