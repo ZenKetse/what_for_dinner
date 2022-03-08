@@ -1,6 +1,8 @@
 class PantriesController < ApplicationController
   skip_before_action :verify_authenticity_token
   def show
+    @hide_topnav = true
+    @hide_bottomnav = true
     @pantry_ingredients = current_user.pantry_ingredients
     respond_to do |format|
       format.html
