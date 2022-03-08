@@ -13,7 +13,9 @@
 <div class="align-items-center no-padding show-page">
   <img class="show-recipe-image" src="<%= @recipe.image %>" alt="<%= @recipe.name %> image">
   <div class=" container recipe-description">
-    <h1><%= @recipe.name %></h1>
+    <div class="d-flex justify-content-between">
+      <h1><%= @recipe.name %></h1> <h1><%= @recipe.servings %> servings</h1>
+    </div>
     <h3 class="show-page-h3">Recipe Ingredients</h3>
     <div class="show-page-content">
       <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
@@ -48,7 +50,8 @@
           </div>
           <div class="modal-body">
           <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
-            <% if pantry_ingredient = PantryIngredient.find_by(ingredient: recipe_ingredient) %>
+            <% ingredient = Ingredient.find(recipe_ingredient.ingredient_id) %>
+            <% if pantry_ingredient = PantryIngredient.find_by(ingredient: ingredient) %>
               <% if pantry_ingredient.in_stock %>
                 <div class="form-check form-switch" data-shop-ingredients-target="ingredient" data-shop-ingredients-id-value="<%= pantry_ingredient.id %>">
                   <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
@@ -61,7 +64,7 @@
                 </div>
               <% end %>
             <% else %>
-              <% pantry_ingredient = PantryIngredient.create!(pantry: current_user.pantry, ingredient: recipe_ingredient.ingredient, in_stock: false, default: false) %>
+              <% pantry_ingredient = PantryIngredient.create!(pantry: current_user.pantry, ingredient: ingredient, in_stock: false, default: true) %>
               <div class="form-check form-switch" data-shop-ingredients-target="ingredient" data-shop-ingredients-id-value="<%= pantry_ingredient.id %>">
                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
                 <label class="form-check-label" for="flexSwitchCheckChecked"><%= pantry_ingredient.ingredient.name.titleize %></label>
