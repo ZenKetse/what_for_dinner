@@ -1,6 +1,6 @@
 <div class="container-show-pantry">
   <h1>This is your pantry 👌</h1>
-  <p>Send your ingredients to the shopping list or remove them!</p>
+  <p style="font-size: 14px; color: grey; margin-bottom: 20px; margin-left: 3px;">Send your ingredients to the <br> shopping list or remove them!</p>
     <% @pantry_ingredients.each do |pantry_ingredient| %>
       <% if pantry_ingredient.in_stock %>
       <%= render "show_ingredient_card", pantry_ingredient: pantry_ingredient %>
