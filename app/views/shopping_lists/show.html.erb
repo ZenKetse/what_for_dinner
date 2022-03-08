@@ -1,24 +1,29 @@
-<div>
+
+<div data-controller="shopping-to-pantry" data-shopping-to-pantry-url-value="<%= pantry_pantry_ingredient_url %>">
   <h1>Your shopping list 🛒</h1>
-  <% if @shopping_list_ingredients.empty? %>
-    <p>You have everything in stock!</p>
+  <% if @shopping_list_ingredients.compact.empty? %>
+    <h6 data-shopping-to-pantry-target="message" style="font-size: 14px; color: grey; margin-bottom: 20px; margin-left: 3px;">You have everything in stock!</p>
   <% else %>
+    <p style="font-size: 14px; color: grey; margin-bottom: 20px; margin-left: 3px;">Send your ingredients to the <br> shopping list or remove them!</p>
     <% @shopping_list_ingredients.each do |shopping_list_ingredient| %>
       <% unless shopping_list_ingredient.nil? %>
-        <div class="card-ingredient">
+        <div class="card-ingredient" data-controller="shopping-list" data-shopping-list-target="ingredientCard" data-shopping-list-id-value="<%= shopping_list_ingredient.id %>" data-shopping-list-destroy-value="<%= shopping_list_url(current_user) %>" data-shopping-list-update-value="<%= shopping_list_update_pantry_url(current_user) %>">
           <div style="width: 120px; height: 100%;">
             <img src="<%= shopping_list_ingredient.ingredient.image %>" />
           </div>
           <div class="card-ingredient-infos">
             <h3><%= shopping_list_ingredient.ingredient.name.titleize %></h3>
-            <p class="detail mb-0">In Stock: <%= shopping_list_ingredient.in_stock %></p>
           </div>
           <div class="card-ingredient-btns">
-            <button class="card-ingredient-btn"><i class='fa-solid fa-trash-can'></i></button>
-            <button class="card-ingredient-btn"><i class="fa-solid fa-store"></i></button>
+            <button class="card-ingredient-btn" data-action="click->shopping-list#destroy"><i class='fa-solid fa-trash-can'></i></button>
+            <button class="card-ingredient-btn" data-action="click->shopping-list#update_to_pantry"><i class="fa-solid fa-store"></i></button>
           </div>
         </div>
       <% end %>
     <% end %>
+  <p style="font-size: 14px; color: grey; margin-bottom: 20px; margin-left: 3px;">Finished shopping? <br> <a data-action="click->shopping-to-pantry#send_everything">Send everything to your pantry!</a></p>
   <% end %>
+  <br>
+  <br>
+  <br>
 </div>

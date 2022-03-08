@@ -8,6 +8,7 @@ export default class extends Controller {
   }
 
   update() {
+    console.log(this.urlValue.match(/^.*\//)[0]);
     let ingredients = [];
     this.ingredientTargets.forEach((ingredient) => {if (ingredient.children[0].checked) {
       ingredients.push(ingredient.dataset.shopIngredientsIdValue);

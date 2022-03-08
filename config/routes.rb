@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :pantry_ingredients, only: %i[update create]
     resources :recipes, only: %i[show index]
     resources :shopping_lists, only: :show
+    patch '/shopping_lists/:id', to: 'shopping_lists#update', as: 'shopping-list-update'
     get '/your-recipes', to: 'recipes#your_index'
     get '/recipe-ingredients/:id', to: 'recipes#ingredients', as: 'recipe-ingredients'
     get '/cookbook', to: 'recipes#favorites_index'
@@ -13,4 +14,5 @@ Rails.application.routes.draw do
     post '/cookbook/unfavorite/:recipe_id', to: 'recipes#remove_from_favorite', as: 'unfavorite-recipe'
   end
   resources :pantry_ingredients, only: :destroy
+  resources :shopping_lists, only: :destroy
 end
