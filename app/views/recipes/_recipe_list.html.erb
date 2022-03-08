@@ -14,8 +14,9 @@
         <% end %>
       </div>
       <div class="card-ingredient-btns">
-        <button class="card-ingredient-btn"><i class='fa-solid fa-trash-can'></i></button>
-        <button class="card-ingredient-btn" style="color: transparent;"><i class='fa-solid fa-store'></i></button>
+          <% if current_user.favorited?(recipe) %>
+            <p class="card-ingredient-btn recipe-in-cookbook"><i class="fa-solid fa-book-open"></i></p>
+          <% end %>
       </div>
     </div>
     <% end %>
