@@ -1,0 +1,37 @@
+.modal-footer-primary-btn {
+  padding: 14px 0;
+  border-radius: 40px;
+  color: $my-yellow;
+  background: $my-dark;
+  display: flex;
+  position: inherit;
+  text-decoration: none;
+  border-color: $my-dark;
+  width: 100%;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.modal-footer-secondary-btn {
+  padding: 14px 0;
+  border-radius: 40px;
+  color: $my-dark;
+  background: $my-white;
+  display: flex;
+  position: inherit;
+  text-decoration: none;
+  border-color: $my-dark;
+  width: 100%;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.modal {
+  top: 36vh;
+  padding: 10px;
+}
+
+.modal-content {
+  border-radius: 10px;
+  padding: 5px;
+}

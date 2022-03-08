@@ -39,8 +39,10 @@
 }
 
 .card-ingredient-btn {
+  border: none;
   color: $my-grey;
   i {
     padding: 0;
+    height: 14;
   }
 }

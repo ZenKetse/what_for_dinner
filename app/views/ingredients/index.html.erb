@@ -1,12 +1,9 @@
 <h1>What ingredients do <br> you want to add?</h1>
 <%= form_with url: pantry_ingredients_path, method: :get, class: "mb-3" do |form| %>
   <%= form.text_field :query,
-                      class: "form-control",
+                      class: "form-control search-bar",
                       placeholder: 'Search ingredient' %>
 <% end %>
-<div>
-  <%= link_to "milk", pantry_ingredients_path(query: "milk") %>
-</div>
 <div data-send-ingredients-target="list" data-controller="send-ingredients" data-ingredients-index-target="list"  data-send-ingredients-url-value="<%= pantry_pantry_ingredients_url %>">
   <%  @not_have_ingredients.each do |ingredient| %>
       <%= render "ingredient_card", ingredient: ingredient %>

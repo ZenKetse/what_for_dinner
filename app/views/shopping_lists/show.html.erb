@@ -6,7 +6,9 @@
     <% @shopping_list_ingredients.each do |shopping_list_ingredient| %>
       <% unless shopping_list_ingredient.nil? %>
         <div class="card-ingredient">
-          <img src="<%= shopping_list_ingredient.ingredient.image %>" />
+          <div style="width: 120px; height: 100%;">
+            <img src="<%= shopping_list_ingredient.ingredient.image %>" />
+          </div>
           <div class="card-ingredient-infos">
             <h3><%= shopping_list_ingredient.ingredient.name.titleize %></h3>
             <p class="detail mb-0">In Stock: <%= shopping_list_ingredient.in_stock %></p>
