@@ -4,11 +4,11 @@
                       class: "form-control",
                       placeholder: 'Search ingredient' %>
 <% end %>
-<div data-send-ingredients-target="list"  data-controller="send-ingredients" data-ingredients-index-target="list">
+<div data-send-ingredients-target="list" data-controller="send-ingredients" data-ingredients-index-target="list"  data-send-ingredients-url-value="<%= pantry_pantry_ingredients_url %>">
   <%  @not_have_ingredients.each do |ingredient| %>
       <%= render "ingredient_card", ingredient: ingredient %>
   <% end %>
-  <div data-send-ingredients-url-value="<%= pantry_pantry_ingredients_url %>">
+  <div>
     <button class="primary-dark-btn-wfd" data-action="click->send-ingredients#send">Add ingredients to your pantry</button>
   </div>
 </div>

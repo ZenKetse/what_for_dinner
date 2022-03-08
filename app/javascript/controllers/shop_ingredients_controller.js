@@ -3,6 +3,9 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = [ 'ingredient' ]
   static values = { id: Number, url: String }
+  connect() {
+    console.log(this.urlValue.match(/^.*\//)[0]);
+  }
 
   update() {
     let ingredients = [];
@@ -12,11 +15,12 @@ export default class extends Controller {
     });
     ingredients.forEach((pantry_ingredient) => {
       console.log(pantry_ingredient);
-      let url = `http://localhost:3000/pantry/pantry_ingredients/${pantry_ingredient}`
+      let url = `${this.urlValue}${pantry_ingredient}`;
+      console.log(url);
         fetch(url, {
           method: "PATCH",
           headers: {  "Accept": "text/plain", 'Content-Type': 'application/json' } ,
-          body: JSON.stringify({ pantry_ingredient: pantry_ingredient })
+          body: JSON.stringify({ id: pantry_ingredient })
         })
     })
 }
