@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :pantry_ingredients, only: %i[update create]
     resources :recipes, only: %i[show index]
     resources :shopping_lists, only: :show
-    patch '/pantry/shopping_lists/:id', only: :update, as: 'update-shopping-list'
+    patch '/shopping_lists/:id', to: 'shopping_lists#update', as: 'shopping-list-update'
     get '/your-recipes', to: 'recipes#your_index'
     get '/recipe-ingredients/:id', to: 'recipes#ingredients', as: 'recipe-ingredients'
     get '/cookbook', to: 'recipes#favorites_index'

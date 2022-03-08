@@ -1,6 +1,6 @@
 class ShoppingListsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_ingredient, only: :update
+  before_action :set_ingredient, except: :show
 
   def show
     default_ingredients = PantryIngredient.where(default: true)
@@ -12,13 +12,12 @@ class ShoppingListsController < ApplicationController
   end
 
   def destroy
-    @shopping_list_ingredient = PantryIngredient.find(params[:shopping_list]['id'])
     @shopping_list_ingredient.destroy
   end
 
   private
 
   def set_ingredient
-    @shopping_list_ingredient = PantryIngredient.find(params[:id])
+    @shopping_list_ingredient = PantryIngredient.find(params[:shopping_list]['id'])
   end
 end

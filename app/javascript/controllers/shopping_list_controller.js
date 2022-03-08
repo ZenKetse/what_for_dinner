@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
   static targets = [ 'ingredientCard' ]
-  static values = { id: Number, destroy: String }
+  static values = { id: Number, destroy: String, update: String }
 
   destroy() {
     console.log(this.destroyValue)
@@ -17,8 +17,8 @@ export default class extends Controller {
       this.ingredientCardTarget.remove();
   }
 
-  send_to_shopping_list() {
-    let url = this.shoppingValue;
+  update_to_pantry() {
+    let url = this.updateValue;
     console.log(url);
     fetch(url, {
       method: "PATCH",
