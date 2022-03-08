@@ -74,7 +74,7 @@
           <% end %>
           </div>
           <div class="modal-footer">
-            <%= link_to "Save changes", pantry_shopping_list_path(current_user), data_action: "click->shop-ingredients#update", class: "modal-footer-primary-btn" %>
+            <%= link_to "Save changes", pantry_shopping_list_path(current_user), "data-action": "click->shop-ingredients#update", class: "modal-footer-primary-btn" %>
             <button type="button" class="modal-footer-secondary-btn" style="position: inherit" data-bs-dismiss="modal">Close</button>
           </div>
         </div>

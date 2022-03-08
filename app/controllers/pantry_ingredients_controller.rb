@@ -15,9 +15,13 @@ class PantryIngredientsController < ApplicationController
   end
 
   def update
-    @pantry_ingredient = PantryIngredient.find(params[:id])
+    if params[:pantry_ingredient].present?
+      @pantry_ingredient = PantryIngredient.find(params[:pantry_ingredient][:id])
+    else
+      @pantry_ingredient = PantryIngredient.find(params[:id])
+    end
     @pantry_ingredient.default = true
-    @pantry_ingredient.update!(in_stock: false)
+    @pantry_ingredient.update(in_stock: false)
   end
 
   def destroy
