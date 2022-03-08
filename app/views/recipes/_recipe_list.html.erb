@@ -14,7 +14,9 @@
         <% end %>
       </div>
       <div class="card-ingredient-btns">
-        <p class="card-ingredient-btn recipe-in-cookbook"><i class="fa-solid fa-book-open"></i></p>
+          <% if current_user.favorited?(recipe) %>
+            <p class="card-ingredient-btn recipe-in-cookbook"><i class="fa-solid fa-book-open"></i></p>
+          <% end %>
       </div>
     </div>
     <% end %>
