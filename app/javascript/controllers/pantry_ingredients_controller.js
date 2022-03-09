@@ -14,7 +14,6 @@ export default class extends Controller {
       .then(response => response.text())
       .then((data) => {
         this.ingredientCardTarget.outterHTML = data
-        console.log(data);
       })
       this.ingredientCardTarget.remove();
   }
@@ -22,7 +21,6 @@ export default class extends Controller {
 
   send_to_shopping_list() {
     let url = this.shoppingValue;
-    console.log(url);
     fetch(url, {
       method: "PATCH",
       headers: {  "Accept": "text/plain", 'Content-Type': 'application/json' } ,

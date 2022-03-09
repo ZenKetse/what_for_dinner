@@ -4,11 +4,6 @@ export default class extends Controller {
   static targets = [ 'message' ]
   static values = { id: Number, url: String }
 
-  connect() {
-    console.log(this.idValue);
-    console.log(this.urlValue);
-  }
-
   send_everything() {
     let url = this.urlValue;
     let ingredients = []

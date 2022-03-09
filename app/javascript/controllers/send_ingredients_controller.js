@@ -8,7 +8,6 @@ export default class extends Controller {
     let pantry_ingredients = []
     let ingredients_list = document.querySelectorAll(".clicked-background").forEach((ingredient) => pantry_ingredients.push(ingredient.getAttribute("data-send-ingredients-id-value")))
     const url = this.urlValue;
-    console.log(url);
     fetch(url, {
       method: "POST",
       headers: {  "Accept": "text/plain", 'Content-Type': 'application/json' } ,

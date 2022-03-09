@@ -39,11 +39,13 @@
     <br>
     <br>
     <br>
-    <% if current_user.favorited?(@recipe) %>
-      <%= link_to 'Remove from Cookbook', unfavorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd", id: "sweet-alert-unfavorite",  style: "margin-bottom: 60px;" %>
-    <% else %>
-      <%= link_to 'Add to Cookbook', favorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd", id: "sweet-alert-favorite", style: "margin-bottom: 60px;" %>
-    <% end %>
+    <div data-controller="sweetalert">
+      <% if current_user.favorited?(@recipe) %>
+        <%= link_to 'Remove from Cookbook', unfavorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd", id: "sweet-alert-unfavorite",  style: "margin-bottom: 60px;" %>
+      <% else %>
+        <%= link_to 'Add to Cookbook', favorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd", id: "sweet-alert-favorite", style: "margin-bottom: 60px;" %>
+      <% end %>
+    </div>
     <button type="button" class="secondary-light-btn-wfd" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Finished Cooking!
     </button>
