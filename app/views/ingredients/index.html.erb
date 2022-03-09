@@ -15,6 +15,7 @@
     <%= link_to 'canned', pantry_ingredients_path(category: 'can jar') %>
     <%= link_to 'frozen', pantry_ingredients_path(category: 'refrigerate frozen') %>
     <%= link_to 'produce', pantry_ingredients_path(category: 'fruit vegetable produce') %>
+    <%= link_to 'All Ingredients', pantry_ingredients_path %>
 <div data-send-ingredients-target="list" data-controller="send-ingredients" data-ingredients-index-target="list"  data-send-ingredients-url-value="<%= pantry_pantry_ingredients_url %>">
   <%  @not_have_ingredients.each do |ingredient| %>
       <%= render "ingredient_card", ingredient: ingredient %>
