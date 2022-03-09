@@ -20,12 +20,18 @@
           <%= link_to 'canned', pantry_path(category: 'can jar') %>
           <%= link_to 'frozen', pantry_path(category: 'refrigerate frozen') %>
           <%= link_to 'produce', pantry_path(category: 'fruit vegetable produce') %>
+          <%= link_to 'All Ingredients', pantry_path %>
         <% if @pantry_ingredients %>
           <% @pantry_ingredients.each do |pantry_ingredient| %>
-            <% if pantry_ingredient.in_stock %>
-              <%= render "show_ingredient_card", pantry_ingredient: pantry_ingredient %>
-            <% elsif pantry_ingredient.first.in_stock %>
-              <%= render "show_ingredient_card", pantry_ingredient: pantry_ingredient.first %>
+            <% if pantry_ingredient.class == PantryIngredient %>
+              <% if pantry_ingredient.in_stock %>
+                <%= render "show_ingredient_card", pantry_ingredient: pantry_ingredient %>
+              <% end %>
+            <% elsif pantry_ingredient.nil? %>
+            <% elsif pantry_ingredient.first %>
+              <% if pantry_ingredient.first.in_stock %>
+                <%= render "show_ingredient_card", pantry_ingredient: pantry_ingredient.first %>
+              <% end %>
             <% end %>
           <% end %>
         <% else %>
