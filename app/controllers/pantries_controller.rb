@@ -3,7 +3,21 @@ class PantriesController < ApplicationController
   def show
     @hide_topnav = true
     @hide_bottomnav = true
-    @pantry_ingredients = current_user.pantry_ingredients
+    if params[:query].present?
+      @pantry_ingredients = current_user.pantry_ingredients.where(ingredient: Ingredient.search_by_name(params[:query]))
+    elsif params[:category].present?
+      @pantry_ingredients = []
+      set_category.each do |categories|
+        categories.each do |category|
+          Ingredient.all.where(category: category).each do |ingredient|
+            @pantry_ingredients << current_user.pantry_ingredients.where(ingredient: ingredient)
+          end
+        end
+      end
+      @pantry_ingredients
+    else
+      @pantry_ingredients = current_user.pantry_ingredients
+    end
     respond_to do |format|
       format.html
       format.text { render partial: "pantries/show_ingredient_card", locals: { pantry_ingredient: pantry_ingredient }, formats: [:html] }
@@ -16,5 +30,13 @@ class PantriesController < ApplicationController
 
   def destroy
     @pantry_ingredient = PantryIngredient.find(params[:id]).destroy
+  end
+
+  private
+
+  def set_category
+    @categories = params[:category].split.map do |category|
+      Category.search_by_category(category)
+    end
   end
 end
