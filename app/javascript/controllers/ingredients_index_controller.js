@@ -15,7 +15,6 @@ export default class extends Controller {
     })
       .then(response => response.text())
       .then((data) => {
-        console.log(data)
         this.ingredientCardTarget.classList.toggle("clicked-background")
       })
   }

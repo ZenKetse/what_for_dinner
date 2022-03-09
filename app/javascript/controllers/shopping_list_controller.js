@@ -5,9 +5,6 @@ export default class extends Controller {
   static values = { id: Number, destroy: String, update: String }
 
   destroy() {
-    console.log(this.destroyValue)
-    console.log(this.idValue)
-    console.log(this.ingredientCardTarget)
     let url = this.destroyValue
     fetch(url, {
       method: "DELETE",
@@ -19,7 +16,6 @@ export default class extends Controller {
 
   update_to_pantry() {
     let url = this.updateValue;
-    console.log(url);
     fetch(url, {
       method: "PATCH",
       headers: {  "Accept": "text/plain", 'Content-Type': 'application/json' } ,
@@ -32,7 +28,6 @@ export default class extends Controller {
     let url = this.updateValue;
     let ingredients = [];
     this.ingredientCardTargets.forEach((ingredient) => ingredients.push(ingredient.dataset.ingredientCardIdValue))
-    console.log(url);
     fetch(url, {
       method: "PATCH",
       headers: {  "Accept": "text/plain", 'Content-Type': 'application/json' } ,
