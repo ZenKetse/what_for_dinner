@@ -1,6 +1,12 @@
 <div class="topbar">
-  <a href="#"><i class="fa-solid fa-arrow-left dark-topbar-icon"></i></a>
   <div class="user-icon">
-    <a href="#"><i class="fa-solid fa-user grey-topbar-icon"></i></a>
+    <%= link_to :back do %>
+      <i class="fa-solid fa-arrow-left dark-topbar-icon"></i>
+    <% end %>
+  </div>
+  <div class="user-icon">
+    <%= link_to(edit_user_registration_path) do %>
+      <i class="fa-solid fa-user grey-topbar-icon"></i>
+    <% end %>
   </div>
 </div>
