@@ -45,7 +45,7 @@
       <%= link_to 'Add to Cookbook', favorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd", id: "sweet-alert-favorite", style: "margin-bottom: 60px;" %>
     <% end %>
     <button type="button" class="secondary-light-btn-wfd" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Finished Cooking!
+      Order Ingredients
     </button>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="shop-ingredients" data-shop-ingredients-url-value="<%= pantry_pantry_ingredient_url %>">
@@ -80,7 +80,7 @@
           <% end %>
           </div>
           <div class="modal-footer">
-            <%= link_to "Save changes", pantry_shopping_list_path(current_user), "data-action": "click->shop-ingredients#update", class: "modal-footer-primary-btn" %>
+            <%= link_to "Send to shopping list", pantry_shopping_list_path(current_user), "data-action": "click->shop-ingredients#update", class: "modal-footer-primary-btn" %>
             <button type="button" class="modal-footer-secondary-btn" style="position: inherit" data-bs-dismiss="modal">Close</button>
           </div>
         </div>

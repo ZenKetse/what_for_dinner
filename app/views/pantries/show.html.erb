@@ -9,7 +9,7 @@
                           class: "form-control search-bar",
                           placeholder: 'Search ingredient' %>
       <% end %>
-        <div class="scroll-categories" data-controller="categories_pant">
+        <div class="scroll-categories" data-controller="categories-pant">
           <%= link_to 'All Ingredients', pantry_path %>
           <%= link_to '🍖 Meat', pantry_path(category: 'meat'), class: "category-pantry", id: "meat" %>
           <%= link_to '🐟 Fish', pantry_path(category: 'fish'), class: "category-pantry", id: "fish"  %>
