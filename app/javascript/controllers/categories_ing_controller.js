@@ -6,9 +6,6 @@ export default class extends Controller {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const category = urlParams.get('category')
-    console.log(queryString);
-    console.log(urlParams);
-    console.log(category);
 
     if (category) {
       document.getElementById(category).classList.add("selected-category-ingredients")
