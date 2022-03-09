@@ -32,3 +32,13 @@
 .show-page-h3 {
   margin-bottom: 1rem;
 }
+
+.recipe-show-servings p {
+  color: $my-yellow;
+  padding: 8px 12px;
+  border: 2px solid $my-yellow;
+  border-radius: 10px;
+  margin: 0;
+  font-size: 14px;
+  display: inline-block;
+}

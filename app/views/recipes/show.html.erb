@@ -12,10 +12,16 @@
 </div>
 <div class="align-items-center no-padding show-page">
   <img class="show-recipe-image" src="<%= @recipe.image %>" alt="<%= @recipe.name %> image">
-  <div class=" container recipe-description">
+  <div class="recipe-description">
     <div class="d-flex justify-content-between">
-      <h1><%= @recipe.name %></h1> <h1><%= @recipe.servings %> servings</h1>
+      <div style="width: 230px;">
+        <h1><%= @recipe.name %></h1>
+      </div>
+      <div class="recipe-show-servings">
+        <p><%= @recipe.servings %> servings</p>
+      </div>
     </div>
+    <br>
     <h3 class="show-page-h3">Recipe Ingredients</h3>
     <div class="show-page-content">
       <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
