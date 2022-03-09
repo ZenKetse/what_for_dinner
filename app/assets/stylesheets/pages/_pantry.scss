@@ -1,7 +1,10 @@
 .background-pantry {
-  background-image: linear-gradient($my-yellow, #FFEEC2);
+  background-image: linear-gradient($my-darkyellow, $my-lightyellow);
+  // height: auto;
   .body-grid {
-    margin-bottom: 3rem;
+    padding-bottom: 10rem;
+    height: auto;
+    margin-bottom: 0;
   }
 }
 
