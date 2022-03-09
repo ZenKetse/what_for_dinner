@@ -10,7 +10,7 @@
                           placeholder: 'Search ingredient' %>
       <% end %>
         <div class="scroll-categories" data-controller="categories-pant">
-          <%= link_to 'All Ingredients', pantry_path %>
+          <%= link_to 'All', pantry_path, class: "category-pantry" %>
           <%= link_to '🍖 Meat', pantry_path(category: 'meat'), class: "category-pantry", id: "meat" %>
           <%= link_to '🐟 Fish', pantry_path(category: 'fish'), class: "category-pantry", id: "fish"  %>
           <%= link_to '🥛 Dairy', pantry_path(category: 'milk egg dairy cheese'), class: "category-pantry", id: "milk egg dairy cheese"  %>
