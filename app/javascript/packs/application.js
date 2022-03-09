@@ -14,3 +14,17 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+
+import { removeFromFavorite } from '../plugins/init_sweetalert';
+
+removeFromFavorite('#sweet-alert-demo', {
+  title: "Removed from Cookbook",
+  icon: "warning"
+});
+
+import { addedToFavorite } from '../plugins/init_sweetalert';
+
+addedToFavorite('#sweet-alert-demo', {
+  title: "Added to Cookbook",
+  icon: "success"
+});
