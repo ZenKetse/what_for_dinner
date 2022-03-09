@@ -1,0 +1,53 @@
+.category-pantry {
+  color: $my-white;
+  padding: 4px 10px;
+  border: 2px solid $my-white;
+  border-radius: 10px;
+  margin: 0;
+  font-size: 14px;
+  display: inline-block;
+  margin-right: 8px;
+  font-weight: 400;
+}
+
+.selected-category-pantry {
+  color: $my-yellow;
+  background-color: $my-white;
+  border: 2px solid $my-white;
+  font-weight: 600;
+}
+
+.category-ingredients {
+  color: $my-grey;
+  padding: 4px 10px;
+  border: 2px solid $my-yellow;
+  border-radius: 10px;
+  margin: 0;
+  font-size: 14px;
+  display: inline-block;
+  margin-right: 8px;
+  font-weight: 400;
+}
+
+.selected-category-ingredients {
+  color: $my-yellow;
+  background-color: $my-lighteryellow;
+  border: 2px solid $my-lighteryellow;
+  font-weight: 600;
+}
+
+.scroll-categories {
+  overflow: auto;
+  white-space: nowrap;
+  margin-bottom: 1rem;
+}
+
+.scroll-categories {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+
+.scroll-categories::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}

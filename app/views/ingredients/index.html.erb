@@ -4,18 +4,20 @@
                       class: "form-control search-bar",
                       placeholder: 'Search ingredient' %>
 <% end %>
-    <%= link_to 'meat', pantry_ingredients_path(category: 'meat') %>
-    <%= link_to 'fish', pantry_ingredients_path(category: 'fish') %>
-    <%= link_to 'dairy', pantry_ingredients_path(category: 'milk egg dairy cheese') %>
-    <%= link_to 'jams', pantry_ingredients_path(category: 'nut butter jams honey') %>
-    <%= link_to 'beverages', pantry_ingredients_path(category: 'beverage') %>
-    <%= link_to 'Seasonings', pantry_ingredients_path(category: 'spice seasoning') %>
-    <%= link_to 'Carbs', pantry_ingredients_path(category: 'pasta rice baking') %>
-    <%= link_to 'Dressings', pantry_ingredients_path(category: 'Oil Vinegar Salad Dressing') %>
-    <%= link_to 'canned', pantry_ingredients_path(category: 'can jar') %>
-    <%= link_to 'frozen', pantry_ingredients_path(category: 'refrigerate frozen') %>
-    <%= link_to 'produce', pantry_ingredients_path(category: 'fruit vegetable produce') %>
-    <%= link_to 'All Ingredients', pantry_ingredients_path %>
+  <div class="scroll-categories" data-controller="categories_ing">
+    <%= link_to 'All', pantry_ingredients_path %>
+    <%= link_to '🍖 Meat', pantry_ingredients_path(category: 'meat'), class: "category-ingredients", id: "meat" %>
+    <%= link_to '🐟 Fish', pantry_ingredients_path(category: 'fish'), class: "category-ingredients", id: "fish" %>
+    <%= link_to '🥛 Dairy', pantry_ingredients_path(category: 'milk egg dairy cheese'), class: "category-ingredients", id: "milk egg dairy cheese"  %>
+    <%= link_to '🌱 Produce', pantry_ingredients_path(category: 'fruit vegetable produce'), class: "category-ingredients", id: "fruit vegetable produce" %>
+    <%= link_to '🍹 Beverages', pantry_ingredients_path(category: 'beverage'), class: "category-ingredients", id: "beverage"  %>
+    <%= link_to '🧂 Seasonings', pantry_ingredients_path(category: 'spice seasoning'), class: "category-ingredients", id: "spice seasoning"  %>
+    <%= link_to '🍚 Carbs', pantry_ingredients_path(category: 'pasta rice baking'), class: "category-ingredients", id: "pasta rice baking"  %>
+    <%= link_to '🍶 Dressings', pantry_ingredients_path(category: 'oil vinegar salad dressing'), class: "category-ingredients", id: "oil vinegar salad dressing"  %>
+    <%= link_to '🥫 Canned', pantry_ingredients_path(category: 'can jar'), class: "category-ingredients", id: "can jar"  %>
+    <%= link_to '🧊 Frozen', pantry_ingredients_path(category: 'refrigerate frozen'), class: "category-ingredients", id: "refrigerate frozen"  %>
+    <%= link_to '🍯 Jams', pantry_ingredients_path(category: 'nut butter jams honey'), class: "category-ingredients", id: "nut butter jams honey"  %>
+  </div>
 <div data-send-ingredients-target="list" data-controller="send-ingredients" data-ingredients-index-target="list"  data-send-ingredients-url-value="<%= pantry_pantry_ingredients_url %>">
   <%  @not_have_ingredients.each do |ingredient| %>
       <%= render "ingredient_card", ingredient: ingredient %>
