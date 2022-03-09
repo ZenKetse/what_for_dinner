@@ -10,11 +10,13 @@ class PantriesController < ApplicationController
       set_category.each do |categories|
         categories.each do |category|
           Ingredient.all.where(category: category).each do |ingredient|
-            @pantry_ingredients << current_user.pantry_ingredients.where(ingredient: ingredient)
+            unless @pantry_ingredients.include?(current_user.pantry_ingredients.find_by(ingredient: ingredient))
+              @pantry_ingredients << current_user.pantry_ingredients.find_by(ingredient: ingredient)
+            end
           end
         end
       end
-      @pantry_ingredients
+      @pantry_ingredients.uniq.compact
     else
       @pantry_ingredients = current_user.pantry_ingredients
     end
