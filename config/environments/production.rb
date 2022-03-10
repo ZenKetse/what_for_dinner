@@ -4,7 +4,6 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://www.whatsfordinner.digital" }
   # Settings specified here will take precedence over those in config/application.rb.
-  config.routes.default_url_options[:host] = "http://www.whatsfordinner.digital"
 
 
   # Code is not reloaded between requests.
