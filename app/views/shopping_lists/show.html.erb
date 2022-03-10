@@ -9,15 +9,13 @@
     <% @shopping_list_ingredients.each do |shopping_list_ingredient| %>
       <% unless shopping_list_ingredient.nil? %>
         <div class="card-ingredient" data-controller="shopping-list" data-shopping-list-target="ingredientCard" data-shopping-list-id-value="<%= shopping_list_ingredient.id %>" data-shopping-list-destroy-value="<%= shopping_list_url(current_user) %>" data-shopping-list-update-value="<%= shopping_list_update_pantry_url(current_user) %>">
-          <div style="width: 120px; height: 100%;">
-            <img src="<%= shopping_list_ingredient.ingredient.image %>" />
-          </div>
+          <div class="card-image" style="background-image: url('<%= shopping_list_ingredient.ingredient.image %>')"></div>
           <div class="card-ingredient-infos">
             <h3><%= shopping_list_ingredient.ingredient.name.titleize %></h3>
           </div>
           <div class="card-ingredient-btns">
-            <button class="card-ingredient-btn" data-action="click->shopping-list#destroy"><i class='fa-solid fa-trash-can'></i></button>
             <button class="card-ingredient-btn" data-action="click->shopping-list#update_to_pantry"><i class="fa-solid fa-store"></i></button>
+            <button class="card-ingredient-btn" data-action="click->shopping-list#destroy"><i class='fa-solid fa-trash-can'></i></button>
           </div>
         </div>
       <% end %>

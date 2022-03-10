@@ -1,7 +1,5 @@
 <div class="card-ingredient" data-controller="ingredients-index" data-ingredients-index-url-value="<%= pantry_ingredients_url %>" data-ingredients-index-id-value=<%= ingredient.id %> data-action="click->ingredients-index#select_ingredient" data-ingredients-index-target="ingredientCard" data-send-ingredients-target="ingredientCard" data-send-ingredients-id-value=<%= ingredient.id %>>
-  <div style="width: 120px; height: 100%;">
-    <img src="<%= ingredient.image %>" />
-  </div>
+  <div class="card-image" style="background-image: url('<%= ingredient.image %>')"></div>
   <div class="card-ingredient-infos">
     <h3><%= ingredient.name %></h3>
   </div>
