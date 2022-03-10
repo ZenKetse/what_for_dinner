@@ -16,7 +16,6 @@ module WhatForDinner
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-    Rails.application.routes.default_url_options = "www.whatsfordinner.digital"
 
 
 
