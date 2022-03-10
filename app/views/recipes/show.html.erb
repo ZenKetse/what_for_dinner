@@ -81,7 +81,6 @@
           <% end %>
           </div>
           <div class="modal-footer">
-          <button data-action="click->shop-ingredients#update" class="modal-footer-primary-btn"></button>
             <%= link_to "Send to shopping list", pantry_shopping_list_path(current_user), "data-action": "click->shop-ingredients#update", class: "modal-footer-primary-btn" %>
             <button type="button" class="modal-footer-secondary-btn" style="position: inherit" data-bs-dismiss="modal">Close</button>
           </div>

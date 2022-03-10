@@ -9,6 +9,8 @@ export default class extends Controller {
 
     if (category) {
       document.getElementById(category).classList.add("selected-category-pantry")
+    } else {
+      document.getElementById('all').classList.add("selected-category-pantry")
     }
   }
 }
