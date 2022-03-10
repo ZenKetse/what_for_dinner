@@ -1,5 +1,5 @@
 
-<% unless recipes.empty? %>
+<% if !recipes.empty? %>
   <% recipes.each do |recipe| %>
     <%= link_to(pantry_recipe_path(recipe)) do %>
     <div class="card-recipes">
@@ -22,6 +22,8 @@
     </div>
     <% end %>
   <% end %>
-<% else %>
+<% elsif request.path == "/pantry/your-recipes"  %>
   <h6 data-shopping-to-pantry-target="message" style="font-size: 14px; color: grey; margin-bottom: 20px; margin-left: 3px;">Since your pantry is empty, <br> there are no recipes you can cook right now!</p>
+<% else %>
+<h6 data-shopping-to-pantry-target="message" style="font-size: 14px; color: grey; margin-bottom: 20px; margin-left: 3px;">You still haven't chosen your favorite recipes!</p>
 <% end %>

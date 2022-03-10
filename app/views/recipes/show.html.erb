@@ -39,11 +39,13 @@
     <br>
     <br>
     <br>
+    <div data-controller="favorite-recipe" data-favorite-recipe-url-value='<%= pantry_recipe_url(@recipe) %>' data-favorite-recipe-target="button">
       <% if current_user.favorited?(@recipe) %>
-        <%= link_to 'Remove from Cookbook', unfavorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd",  style: "margin-bottom: 60px;", redirect_to: pantry_recipes_path(@recipe) %>
+        <%= link_to 'Remove from Cookbook', unfavorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd", "data-action": "click->favorite-recipe#unfavorite", id: "unfavorite",  style: "margin-bottom: 60px;" %>
       <% else %>
-        <%= link_to 'Add to Cookbook', favorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd", style: "margin-bottom: 60px;" %>
+        <%= link_to 'Add to Cookbook', favorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd", "data-action": "click->favorite-recipe#favorite", id: "favorite", style: "margin-bottom: 60px;" %>
       <% end %>
+    </div>
     <button type="button" class="secondary-light-btn-wfd" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Order Ingredients
     </button>
@@ -79,6 +81,7 @@
           <% end %>
           </div>
           <div class="modal-footer">
+          <button data-action="click->shop-ingredients#update" class="modal-footer-primary-btn"></button>
             <%= link_to "Send to shopping list", pantry_shopping_list_path(current_user), "data-action": "click->shop-ingredients#update", class: "modal-footer-primary-btn" %>
             <button type="button" class="modal-footer-secondary-btn" style="position: inherit" data-bs-dismiss="modal">Close</button>
           </div>
