@@ -4,6 +4,21 @@
       <i class="fa-solid fa-arrow-left dark-topbar-icon"></i>
     <% end %>
   </div>
+  <div>
+    <% if request.path == "/pantry/cookbook" %>
+      <h1 class="navbar-title">YOUR COOKBOOK</h1>
+    <% elsif request.path == "/pantry" %>
+      <h1 class="navbar-title" style="color: white;">YOUR PANTRY</h1>
+    <% elsif request.path == '/pantry/your-recipes' %>
+      <h1 class="navbar-title">COOKABLE RECIPES</h1>
+    <% elsif request.path == '/pantry/ingredients' %>
+      <h1 class="navbar-title">ALL INGREDIENTS</h1>
+    <% elsif request.path == '/pantry/recipes' %>
+      <h1 class="navbar-title">ALL RECIPES</h1>
+    <% else%>
+      <h1 class="navbar-title">YOUR SHOPPING LIST</h1>
+    <% end %>
+  </div>
   <div class="user-icon">
     <%= link_to(edit_user_registration_path) do %>
       <i class="fa-solid fa-user grey-topbar-icon"></i>

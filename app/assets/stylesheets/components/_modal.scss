@@ -27,6 +27,11 @@
   font-weight: 600;
 }
 
+.modal-footer-primary-btn:hover {
+  text-decoration: none;
+  color: $my-yellow;
+}
+
 .modal-footer-secondary-btn {
   padding: 14px 0;
   border-radius: 40px;
@@ -39,4 +44,8 @@
   width: 100%;
   justify-content: center;
   font-weight: 600;
+}
+
+.modal-footer-secondary-btn:hover {
+  text-decoration: none;
 }

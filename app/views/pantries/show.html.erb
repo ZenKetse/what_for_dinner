@@ -1,8 +1,22 @@
 <div class="background-pantry">
-  <%= render 'shared/topbar' %>
+  <div class="topbar pantry-background">
+  <div class="user-icon">
+    <%= link_to :back do %>
+      <i class="fa-solid fa-arrow-left dark-topbar-icon"></i>
+    <% end %>
+  </div>
+  <div>
+    <h1 class="navbar-title" style="color: white;">YOUR PANTRY</h1>
+  </div>
+  <div class="user-icon">
+    <%= link_to(edit_user_registration_path) do %>
+      <i class="fa-solid fa-user grey-topbar-icon"></i>
+    <% end %>
+  </div>
+</div>
   <div class="body-grid">
     <div class="container-show-pantry">
-      <h1>This is your pantry 🥑</h1>
+      <h1>Keep track of your ingredients 🥑</h1>
       <p style="font-size: 16px; color: white; margin-bottom: 20px; margin-left: 3px;">Send your ingredients to the <br> shopping list or remove them!</p>
       <%= form_with url: pantry_path, method: :get, class: "mb-3" do |form| %>
       <%= form.text_field :query,
