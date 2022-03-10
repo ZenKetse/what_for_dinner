@@ -1,5 +1,7 @@
 require "active_support/core_ext/integer/time"
 
+Rails.application.routes.default_url_options[:host] = ENV["DEAFULT_URL_HOST"]
+
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://www.whatsfordinner.digital" }
   # Settings specified here will take precedence over those in config/application.rb.
