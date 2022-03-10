@@ -24,6 +24,17 @@ export default class extends Controller {
       });
     }
 
+    const emptyPantry = document.querySelector("#sweet-alert-empty-pantry");
+    if (emptyPantry) { // protect other pages
+      window.onload = (event) => {
+        swal({
+          title: "Empty pantry",
+          text: "Since your pantry is empty, there are no recipes you can cook right now",
+          icon: "warning"
+        }).then({}); // <-- add the `.then({})`
+      };
+    }
+
   }
 
 }

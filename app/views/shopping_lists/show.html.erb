@@ -3,6 +3,7 @@
   <h1>Your shopping list 🛒</h1>
   <% if @shopping_list_ingredients.compact.empty? %>
     <h6 data-shopping-to-pantry-target="message" style="font-size: 14px; color: grey; margin-bottom: 20px; margin-left: 3px;">You have everything in stock!</p>
+    <%= link_to "Browse all recipes", pantry_recipes_path, class: "primary-dark-btn-wfd"  %>
   <% else %>
     <p style="font-size: 14px; color: grey; margin-bottom: 20px; margin-left: 3px;">Send your ingredients to the <br> shopping list or remove them!</p>
     <% @shopping_list_ingredients.each do |shopping_list_ingredient| %>
@@ -24,7 +25,7 @@
     <br>
     <br>
     <br>
-  <button class="primary-dark-btn-wfd" data-action="click->shopping-to-pantry#send_everything">Send everything to your pantry!</button>
+    <button class="primary-dark-btn-wfd" data-action="click->shopping-to-pantry#send_everything">Send everything to your pantry!</button>
   <% end %>
   <br>
   <br>

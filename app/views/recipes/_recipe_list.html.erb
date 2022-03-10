@@ -1,4 +1,5 @@
-<div>
+<div data-controller="sweetalert">
+<% unless recipes.empty? %>
   <% recipes.each do |recipe| %>
     <%= link_to(pantry_recipe_path(recipe)) do %>
     <div class="card-recipes">
@@ -21,4 +22,7 @@
     </div>
     <% end %>
   <% end %>
+<% else %>
+  <div id="sweet-alert-empty-pantry"></div>
+<% end %>
 </div>
