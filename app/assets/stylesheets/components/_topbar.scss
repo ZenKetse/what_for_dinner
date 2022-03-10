@@ -5,10 +5,14 @@
   top: 0;
   height: 6rem;
   width: 100vw;
-  background: transparent;
   padding: 0 24px;
+  position: fixed;
+  background-color: white;
 }
 
+.pantry-background {
+  background-color: $my-darkyellow;
+}
 .user-icon {
   height: 32px;
   width: 32px;
