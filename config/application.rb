@@ -6,7 +6,6 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Rails.application.routes.default_url_options = "www.whatsfordinner.digital"
 
 module WhatForDinner
   class Application < Rails::Application
@@ -17,6 +16,8 @@ module WhatForDinner
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    Rails.application.routes.default_url_options = "www.whatsfordinner.digital"
+
 
 
 
