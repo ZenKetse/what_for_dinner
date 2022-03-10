@@ -1,4 +1,4 @@
-<div data-controller="sweetalert">
+
 <% unless recipes.empty? %>
   <% recipes.each do |recipe| %>
     <%= link_to(pantry_recipe_path(recipe)) do %>
@@ -25,4 +25,3 @@
 <% else %>
   <h6 data-shopping-to-pantry-target="message" style="font-size: 14px; color: grey; margin-bottom: 20px; margin-left: 3px;">Since your pantry is empty, <br> there are no recipes you can cook right now!</p>
 <% end %>
-</div>

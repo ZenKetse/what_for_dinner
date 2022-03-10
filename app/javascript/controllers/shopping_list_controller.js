@@ -6,8 +6,6 @@ export default class extends Controller {
 
   destroy() {
     let url = this.destroyValue;
-
-    console.log(this.destroyValue)
     fetch(url, {
       method: "DELETE",
       headers: { "Accept": "text/plain", 'Content-Type': 'application/json' },
