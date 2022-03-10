@@ -5,7 +5,8 @@ export default class extends Controller {
   static values = { id: Number, destroy: String, update: String }
 
   destroy() {
-    let url = this.destroyValue
+    let url = this.destroyValue;
+    console.log(this.destroyValue)
     fetch(url, {
       method: "DELETE",
       headers: { "Accept": "text/plain", 'Content-Type': 'application/json' },
