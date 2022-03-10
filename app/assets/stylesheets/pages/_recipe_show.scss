@@ -42,3 +42,25 @@
   font-size: 14px;
   display: inline-block;
 }
+
+.show-ing-yes {
+  letter-spacing: 1px;
+  margin-bottom: -1px;
+  line-height: 30px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  background-color: #d1e7dd;
+  color: $my-dark;
+}
+
+.show-ing-no {
+  letter-spacing: 1px;
+  margin-bottom: -1px;
+  line-height: 30px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  background-color: #F8D7D9;
+  color: $my-dark;
+}

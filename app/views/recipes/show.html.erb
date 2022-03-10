@@ -26,9 +26,9 @@
     <div class="show-page-content">
       <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
         <% if current_user.pantry.ingredients.include?(recipe_ingredient.ingredient) && current_user.pantry_ingredients.find_by(ingredient: recipe_ingredient.ingredient).in_stock %>
-          <p class="show-page-p"><%= recipe_ingredient.amount %> <%= recipe_ingredient.unit %>   <%= recipe_ingredient.ingredient.name %> ✔️</p>
+          <p class="show-ing-yes"><i class="fa-solid fa-circle-check"></i> <%= recipe_ingredient.amount %> <%= recipe_ingredient.unit %>   <%= recipe_ingredient.ingredient.name %></p>
         <% else %>
-          <p class="show-page-p"><%= recipe_ingredient.amount %> <%= recipe_ingredient.unit %>   <%= recipe_ingredient.ingredient.name %> ❌</p>
+          <p class="show-ing-no"><i class="fa-solid fa-circle-xmark"></i> <%= recipe_ingredient.amount %> <%= recipe_ingredient.unit %>   <%= recipe_ingredient.ingredient.name %></p>
         <% end %>
       <% end %>
     </div>
