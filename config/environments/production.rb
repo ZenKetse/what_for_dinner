@@ -56,7 +56,7 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
   config.default_host = 'www.whatsfordinner.digital'
-  config.routes.default_url_options[:host] = 'www.whatsfordinner.digital'
+  config.default_url_options[:host] = 'www.whatsfordinner.digital'
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
