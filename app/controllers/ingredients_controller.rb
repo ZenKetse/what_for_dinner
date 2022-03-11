@@ -15,7 +15,8 @@ class IngredientsController < ApplicationController
     else
       @all_ingredients = Ingredient.all
     end
-    @not_have_ingredients = (@all_ingredients - current_user.pantry.ingredients)
+    @user_ingredients = PantryIngredient.where(pantry: current_user.pantry, default: true).map { |pantry_ingredient| pantry_ingredient.ingredient }
+    @not_have_ingredients = (@all_ingredients - @user_ingredients)
     @not_have_ingredients.each do |ingredient|
       @ingredient = ingredient
     end
