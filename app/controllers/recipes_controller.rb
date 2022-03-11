@@ -37,13 +37,11 @@ class RecipesController < ApplicationController
   def remove_from_favorite
     @recipe = Recipe.find(params[:recipe_id])
     current_user.unfavorite(@recipe)
-    redirect_to pantry_recipe_path(@recipe)
   end
 
   def add_to_favorite
     @recipe = Recipe.find(params[:recipe_id])
     current_user.favorite(@recipe)
-    redirect_to pantry_recipe_path(@recipe)
   end
 
   private
