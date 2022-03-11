@@ -40,6 +40,8 @@
   flex-direction: row;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  right: 24px;
 }
 
 .card-ingredient-btn {
