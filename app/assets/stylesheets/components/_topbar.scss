@@ -10,6 +10,17 @@
   background-color: white;
 }
 
+.recipe-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  height: 6rem;
+  width: 100vw;
+  padding: 0 24px;
+  position: fixed;
+  background-color: transparent;
+}
 .pantry-background {
   background-color: $my-darkyellow;
 }

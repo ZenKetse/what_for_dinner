@@ -1,4 +1,4 @@
-<div class="topbar show-nav-bar">
+<div class="recipe-topbar show-nav-bar">
   <div class="user-icon">
     <%= link_to :back do %>
       <i class="fa-solid fa-arrow-left dark-topbar-icon"></i>
@@ -26,9 +26,9 @@
     <div class="show-page-content">
       <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
         <% if current_user.pantry.ingredients.include?(recipe_ingredient.ingredient) && current_user.pantry_ingredients.find_by(ingredient: recipe_ingredient.ingredient).in_stock %>
-          <p class="show-ing-yes"><i class="fa-solid fa-circle-check"></i> <%= recipe_ingredient.amount %> <%= recipe_ingredient.unit %>   <%= recipe_ingredient.ingredient.name %></p>
+          <p class="show-ing-yes"><i class="fa-solid fa-circle-check"></i> <%= recipe_ingredient.amount.round(2) %> <%= recipe_ingredient.unit %>   <%= recipe_ingredient.ingredient.name %></p>
         <% else %>
-          <p class="show-ing-no"><i class="fa-solid fa-circle-xmark"></i> <%= recipe_ingredient.amount %> <%= recipe_ingredient.unit %>   <%= recipe_ingredient.ingredient.name %></p>
+          <p class="show-ing-no"><i class="fa-solid fa-circle-xmark"></i> <%= recipe_ingredient.amount.round(2) %> <%= recipe_ingredient.unit %>   <%= recipe_ingredient.ingredient.name %></p>
         <% end %>
       <% end %>
     </div>
@@ -41,9 +41,9 @@
     <br>
     <div data-controller="sweetalert">
       <% if current_user.favorited?(@recipe) %>
-        <%= link_to 'Remove from Cookbook', unfavorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd", id: "sweet-alert-unfavorite",  style: "margin-bottom: 60px;" %>
+        <%= link_to 'Remove from Cookbook', unfavorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd",  style: "margin-bottom: 60px;", redirect_to: pantry_recipes_path(@recipe) %>
       <% else %>
-        <%= link_to 'Add to Cookbook', favorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd", id: "sweet-alert-favorite", style: "margin-bottom: 60px;" %>
+        <%= link_to 'Add to Cookbook', favorite_recipe_pantry_path(@recipe), method: :post, class: "primary-dark-btn-wfd", style: "margin-bottom: 60px;" %>
       <% end %>
     </div>
     <button type="button" class="secondary-light-btn-wfd" data-bs-toggle="modal" data-bs-target="#exampleModal">
